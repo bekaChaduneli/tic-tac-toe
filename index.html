@@ -1,129 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Tic Tac Toe</title>
-</head>
-<body>
-  <div class = "center">
-    <div class = "manu">
-    <svg class = "logo" width="72" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31C3BD"/><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#F2B137" fill-rule="nonzero"/></g></svg>
-    <div class = "first-conteiner">
-      <h1 class = "first-conteiner-headline">PICK PLAYER 1’S MARK</h1>
-      <div class = "first-conteiner-choose-box">
-        <button class = "x-box"><img id = "x-icon" src = "assets/icon-x.svg"></button>
-        <button class = "o-box"><img id = "y-icon" src="assets/icon-o.svg"></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="center">
+      <div class="manu">
+        <svg
+          class="logo"
+          width="72"
+          height="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z"
+              fill="#31C3BD"
+            />
+            <path
+              d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z"
+              fill="#F2B137"
+              fill-rule="nonzero"
+            />
+          </g>
+        </svg>
+        <div class="first-conteiner">
+          <h1 class="first-conteiner-headline">PICK PLAYER 1’S MARK</h1>
+          <div class="first-conteiner-choose-box">
+            <button class="x-box">
+              <img id="x-icon" src="assets/icon-x.svg" />
+            </button>
+            <button class="o-box">
+              <img id="y-icon" src="assets/icon-o.svg" />
+            </button>
+          </div>
+          <h2 class="first-conteiner-text">REMEMBER : O GOES FIRST</h2>
+        </div>
+        <div class="second-conteiner">
+          <button class="cpu">NEW GAME (VS CPU)</button>
+          <button class="player">NEW GAME (VS PLAYER)</button>
+        </div>
       </div>
-      <h2 class = "first-conteiner-text">REMEMBER : O GOES FIRST</h2>
     </div>
-    <div class = "second-conteiner">
-      <button class = "cpu">NEW GAME (VS CPU)</button>
-      <button class = "player">NEW GAME  (VS PLAYER)</button>
-    </div>
-  </div>
-  </div>
-  <div class = "player-game">
-    <div class = "player-game-first-conteiner">
-      <svg class = "player-logo" width="72" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31C3BD"/><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#F2B137" fill-rule="nonzero"/></g></svg>
-      <div class = "turns-box">
-        <img id = "player-x-icon" src = "assets/icon-x.svg">
-        <img id = "player-o-icon" src= "assets/icon-o.svg">
-        <h1 class = "turns-text">TURNS</h1>
+    <div class="player-game">
+      <div class="player-game-first-conteiner">
+        <svg
+          class="player-logo"
+          width="72"
+          height="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z"
+              fill="#31C3BD"
+            />
+            <path
+              d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z"
+              fill="#F2B137"
+              fill-rule="nonzero"
+            />
+          </g>
+        </svg>
+        <div class="turns-box">
+          <img id="player-x-icon" src="assets/icon-x.svg" />
+          <img id="player-o-icon" src="assets/icon-o.svg" />
+          <h1 class="turns-text">TURNS</h1>
+        </div>
+        <button class="restart">
+          <img class="restart-img" src="assets/icon-restart.svg" />
+        </button>
       </div>
-      <button class = "restart"><img class = "restart-img" src="assets/icon-restart.svg"></button>
-    </div>
-    <div class = "player-game-second-conteiner">
-      <div id = "box1" cellIndex="0" class = "box"></div>
-      <div id = "box2" cellIndex="1" class = "box"></div>
-      <div id = "box3" cellIndex="2" class = "box"></div>
-      <div id = "box4" cellIndex="3" class = "box"></div>
-      <div id = "box5" cellIndex="4" class = "box"></div>
-      <div id = "box6" cellIndex="5" class = "box"></div>
-      <div id = "box7" cellIndex="6" class = "box"></div>
-      <div id = "box8" cellIndex="7" class = "box"></div>
-      <div id = "box9" cellIndex="8" class = "box"></div>
-    </div>
-    <div class = "player-game-third-conteiner">
-      <div class = "your-box"><h2 class = "your-text">X (P2)</h2><h1 class = "your-count">0</h1></div>
-      <div class = "ties-box"><h2 class = "ties-text">TIES</h2><h1 class = "ties-count">0</h1></div>
-      <div class = "oponent-box"><h2 class = "oponent-text">O (P1)</h2><h1 class = "oponent-count">0</h1></div>
-  </div>
-  </div>
-  <div class = "cpu-game">
-    <div class = "player-game-first-conteiner">
-      <svg class = "player-logo" width="72" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31C3BD"/><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#F2B137" fill-rule="nonzero"/></g></svg>
-      <div class = "turns-box">
-        <img id = "player-x-icon" src = "assets/icon-x.svg">
-        <img id = "player-o-icon" src="assets/icon-o.svg">
-        <h1 class = "turns-text">TURNS</h1>
+      <div class="player-game-second-conteiner">
+        <div id="box1" cellIndex="0" class="box"></div>
+        <div id="box2" cellIndex="1" class="box"></div>
+        <div id="box3" cellIndex="2" class="box"></div>
+        <div id="box4" cellIndex="3" class="box"></div>
+        <div id="box5" cellIndex="4" class="box"></div>
+        <div id="box6" cellIndex="5" class="box"></div>
+        <div id="box7" cellIndex="6" class="box"></div>
+        <div id="box8" cellIndex="7" class="box"></div>
+        <div id="box9" cellIndex="8" class="box"></div>
       </div>
-      <button class = "restart"><img class = "restart-img" src="assets/icon-restart.svg"></button>
+      <div class="player-game-third-conteiner">
+        <div class="your-box">
+          <h2 class="your-text">X (P2)</h2>
+          <h1 class="your-count">0</h1>
+        </div>
+        <div class="ties-box">
+          <h2 class="ties-text">TIES</h2>
+          <h1 class="ties-count">0</h1>
+        </div>
+        <div class="oponent-box">
+          <h2 class="oponent-text">O (P1)</h2>
+          <h1 class="oponent-count">0</h1>
+        </div>
+      </div>
     </div>
-    <div class = "player-game-second-conteiner">
-      <div id = "box1" cellIndex="0" class = "box"></div>
-      <div id = "box2" cellIndex="1" class = "box"></div>
-      <div id = "box3" cellIndex="2" class = "box"></div>
-      <div id = "box4" cellIndex="3" class = "box"></div>
-      <div id = "box5" cellIndex="4" class = "box"></div>
-      <div id = "box6" cellIndex="5" class = "box"></div>
-      <div id = "box7" cellIndex="6" class = "box"></div>
-      <div id = "box8" cellIndex="7" class = "box"></div>
-      <div id = "box9" cellIndex="8" class = "box"></div>
+    <div class="cpu-game">
+      <div class="player-game-first-conteiner">
+        <svg
+          class="player-logo"
+          width="72"
+          height="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z"
+              fill="#31C3BD"
+            />
+            <path
+              d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z"
+              fill="#F2B137"
+              fill-rule="nonzero"
+            />
+          </g>
+        </svg>
+        <div class="turns-box">
+          <img id="player-x-icon" src="assets/icon-x.svg" />
+          <img id="player-o-icon" src="assets/icon-o.svg" />
+          <h1 class="turns-text">TURNS</h1>
+        </div>
+        <button class="restart">
+          <img class="restart-img" src="assets/icon-restart.svg" />
+        </button>
+      </div>
+      <div class="player-game-second-conteiner">
+        <div id="box1" cellIndex="0" class="box"></div>
+        <div id="box2" cellIndex="1" class="box"></div>
+        <div id="box3" cellIndex="2" class="box"></div>
+        <div id="box4" cellIndex="3" class="box"></div>
+        <div id="box5" cellIndex="4" class="box"></div>
+        <div id="box6" cellIndex="5" class="box"></div>
+        <div id="box7" cellIndex="6" class="box"></div>
+        <div id="box8" cellIndex="7" class="box"></div>
+        <div id="box9" cellIndex="8" class="box"></div>
+      </div>
+      <div class="player-game-third-conteiner">
+        <div class="your-box">
+          <h2 class="your-text">X (P2)</h2>
+          <h1 class="your-count">0</h1>
+        </div>
+        <div class="ties-box">
+          <h2 class="ties-text">TIES</h2>
+          <h1 class="ties-count">0</h1>
+        </div>
+        <div class="oponent-box">
+          <h2 class="oponent-text">O (P1)</h2>
+          <h1 class="oponent-count">0</h1>
+        </div>
+      </div>
     </div>
-    <div class = "player-game-third-conteiner">
-      <div class = "your-box"><h2 class = "your-text">X (P2)</h2><h1 class = "your-count">0</h1></div>
-      <div class = "ties-box"><h2 class = "ties-text">TIES</h2><h1 class = "ties-count">0</h1></div>
-      <div class = "oponent-box"><h2 class = "oponent-text">O (P1)</h2><h1 class = "oponent-count">0</h1></div>
-  </div>
-  </div>
-  <div class = "last-screen">
-    <div class = "last-conteiner">
-      <span class = "O-win-box">
-        <h1 class = "O-win-headline">PLAYER 1 WINS!</h1>
-        <div class = "winner-box">
-          <img class = "winner-o-icon" src = "assets/icon-o.svg">
-          <h1 class = "winner-o-text">TAKES THE ROUND</h1>
-        </div>
-        <div class = "buttons">
-          <button class = "o-quit" onclick = "document.location.reload">QUIT</button>
-          <button class = "o-next-round">NEXT ROUND</button>
-        </div>
-      </span>
-      <span class = "X-win-box">
-        <h1 class = "X-win-headline">PLAYER 2 WINS!</h1>
-        <div class = "winner-box">
-          <img class = "winner-x-icon" src = "assets/icon-x.svg">
-          <h1 class = "winner-x-text">TAKES THE ROUND</h1>
-        </div>
-        <div class = "buttons">
-          <button class = "x-quit" onclick = "document.location.reload">QUIT</button>
-          <button class = "x-next-round">NEXT ROUND</button>
-        </div>
-      </span>
-      <span class = "draw-box">
-        <h1 class = "draw-headline">ROUND TIED</h1>
-        <div class = "buttons">
-          <button class = "draw-quit" onclick = "document.location.reload">QUIT</button>
-          <button class = "draw-next-round">NEXT ROUND</button>
-        </div>
-      </span>
-      <span class = "restart-game">
-        <h1 class = "restart-headline">RESTART GAME?</h1>
-        <span class = "buttons">
-          <button class = "cancle">NO, CANCEL</button>
-          <button class = "button-restart">YES, RESTART</button>
+    <div class="last-screen">
+      <div class="last-conteiner">
+        <span class="O-win-box">
+          <h1 class="O-win-headline">PLAYER 1 WINS!</h1>
+          <div class="winner-box">
+            <img class="winner-o-icon" src="assets/icon-o.svg" />
+            <h1 class="winner-o-text">TAKES THE ROUND</h1>
+          </div>
+          <div class="buttons">
+            <button class="o-quit" onclick="document.location.reload">
+              QUIT
+            </button>
+            <button class="o-next-round">NEXT ROUND</button>
+          </div>
         </span>
-      </span>
+        <span class="X-win-box">
+          <h1 class="X-win-headline">PLAYER 2 WINS!</h1>
+          <div class="winner-box">
+            <img class="winner-x-icon" src="assets/icon-x.svg" />
+            <h1 class="winner-x-text">TAKES THE ROUND</h1>
+          </div>
+          <div class="buttons">
+            <button class="x-quit" onclick="document.location.reload">
+              QUIT
+            </button>
+            <button class="x-next-round">NEXT ROUND</button>
+          </div>
+        </span>
+        <span class="draw-box">
+          <h1 class="draw-headline">ROUND TIED</h1>
+          <div class="buttons">
+            <button class="draw-quit" onclick="document.location.reload">
+              QUIT
+            </button>
+            <button class="draw-next-round">NEXT ROUND</button>
+          </div>
+        </span>
+        <span class="restart-game">
+          <h1 class="restart-headline">RESTART GAME?</h1>
+          <span class="buttons">
+            <button class="cancle">NO, CANCEL</button>
+            <button class="button-restart">YES, RESTART</button>
+          </span>
+        </span>
+      </div>
     </div>
-  </div>
-  <!--this element is for found out if the CPU was clicked or not-->
-  <span class = "for-count-cpu">`</span>
-  <script src = "script.js"></script>
-</body>
+    <!--this element is for found out if the CPU was clicked or not-->
+    <span class="for-count-cpu">`</span>
+    <script src="script.js"></script>
+  </body>
 </html>
